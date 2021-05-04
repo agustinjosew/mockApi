@@ -223,9 +223,10 @@ servidor.listen(puerto);
   </a>
 </p>
 
+> commit & push de los cambios y seguimos!
 </details>
 
-> commit & push de los cambios y seguimos!
+
 
 ***
 
