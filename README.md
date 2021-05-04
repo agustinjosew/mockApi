@@ -14,7 +14,8 @@
 # Que vamos a realizar:
 
 ```
-Crear una version simulada de API funcional con JSON-Server y Heroku en pocos minutos, lista para usar de manera minima.
+Crear una version simulada de API funcional con JSON-Server y Heroku en pocos minutos, 
+lista para usar de manera minima.
 ```
 
 ***
@@ -110,7 +111,8 @@ Resources
 <summary>Paso 4 - Registarnos en Heroku</summary>
 
 ```
-Para registrarnos vamos a Heroku, en el caso que ya estemos registrados solamente iniciamos sesion y completamos los campos.
+Para registrarnos vamos a Heroku, en el caso que ya estemos registrados solamente iniciamos sesion 
+y completamos los campos.
 ```
 
 > heroku.com
