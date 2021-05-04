@@ -132,3 +132,6 @@ dmypy.json
 .VsCode/
 .VsCode
 .VsCode/settings.json
+
+# Node
+node_modules

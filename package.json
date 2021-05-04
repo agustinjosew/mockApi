@@ -1,0 +1,23 @@
+{
+  "name": "mockapi",
+  "version": "1.0.0",
+  "description": "mock api test & heroku",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "node servidor.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agustinjosew/mockApi.git"
+  },
+  "author": "Agustin Jose Wawrzyk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agustinjosew/mockApi/issues"
+  },
+  "homepage": "https://github.com/agustinjosew/mockApi#readme",
+  "dependencies": {
+    "json-server": "^0.16.3"
+  }
+}

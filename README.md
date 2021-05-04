@@ -2,13 +2,6 @@
 
 <h3 align="center"><img src="https://i.imgur.com/Ypvo6rs.png" alt="logo" height="550px"></h3>
 
-
-<p align="center">
-  <a href="">
-    <img src="https://img.shields.io/badge/template-tmpMsg-success">
-  </a>
-</p>
-
 ***
 
 # Que vamos a realizar:
@@ -72,8 +65,6 @@ Obtener paquete para poder crear la base de datos online
 
 </details>
 
-</details>
-
 
 <details>
 <summary>Paso 3 - Iniciar servidor Json</summary>
@@ -126,10 +117,115 @@ y completamos los campos.
     <img src="https://i.imgur.com/24XAR7T.png">
   </a>
 </p>
-</details>
+
 
 > Antes de continuar, prefiero hacer un commit & push de todo lo que voy haciendo hasta el momento, incluida esta documentacion que estoy haciendo en local.
+</details>
 
+<details>
+<summary>Paso 5 - Crear un paquete . json</summary>
+
+```
+Vamos a usar npm init, como es la primera vez que lo vamos a ejecutar dentro del proyecto 
+nos crea el archivo package.json, de invocarlo nuevamente lo que hace al detectar que 
+ya esta creado es actualizarlo.
+```
+
+> 1) npm init
+
+> 2) nos indica las configuraciones basicas
+
+> 3) siguiente siguiente y listo
+
+> 4) tenemos nuestro package.json creado
+
+``` json
+{
+  "name": "mockapi",
+  "version": "1.0.0",
+  "description": "mock api test & heroku",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agustinjosew/mockApi.git"
+  },
+  "author": "Agustin Jose W",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agustinjosew/mockApi/issues"
+  },
+  "homepage": "https://github.com/agustinjosew/mockApi#readme"
+}
+
+```
+Entonces lo que hacemos en este punto es inicializar el proyecto y crear el archivo package.json
+
+Para mas informacion consulta en [NPM INIT](https://docs.npmjs.com/cli/v7/commands/npm-init) .
+
+</details>
+
+<details>
+<summary>Paso 6 - Verificamos que Modulos y Dependencias tenemos de Node</summary>
+
+```
+Para esto usamos NPM INSTALL, al no especificar ningun paquete se entiende que se desea 
+verificar/instalar todas las dependencias dentro del archivo package.json. 
+Esto es habitual, cuando se descargan proyectos o aplicaciones de github por ejemplo, 
+ya que las dependencias deben ser instaladas luego de descargar el proyecto 
+(por razones de tamaño).
+```
+
+> desde la consola ingresamos " npm i "
+
+> nos devuelve el resultado y vemos que  se ha creado un archivo  << package-lock.json >>
+
+> este nuevo archivo es el que SI vamos a tener que enviar al repositorio y nos sirve para indicar las dependencias que tiene nuestro proyecto pero sin necesidad de subir al repositorio las mismas, recordemos que aqui estamos tratando con el tema del tamaño...del repo (?), tambien sirve para que cuando bajemos el contenido tener la posibilidad de elegir versiones previas de las dependencias y optimizar el proceso de instalacion de las mismas evitando tener que resolver de nuevo los metadatos de los paquetes instalados previamente.
+
+> para mas informacion de [PACKAGE-LOCK.JSON](https://docs.npmjs.com/cli/v6/configuring-npm/package-lock-json) .
+
+> volvemos a la consola e instalamos el paquete json-server como una dependencia, hasta ahora lo teniamos solamente en local, pero al hacer este paso agregamos ese requisito al archivo de packages que veniamos creando
+
+> usamos npm i json-server , a continuacion vemos que se crea una nueva carpeta node_modules y dentro de la misma mas carpetas
+
+> en package.json vemos ahora que fue insertado lo siguiente:
+``` json
+ },
+    "dependencies": {
+    "json-server": "^0.16.3"
+  }
+```
+> dentro de package.json en la seccion de "scripts" voy a crear una nueva declaracion, necesito algo para invocar que levante el servidor, para eso hacemos lo siguiente, donde dice test al final ponemos una coma y debajo :
+``` json
+"start": "node servidor.js"
+```
+> guardamos y creamos el archivo porque lo tenemos declarado pero no creado, en esta parte en especial vemos contenidos especificos de backend, si no estas familiarizado con el tema siempre es bueno ponerse a buscar informacion, la logica de esto es: !) obtener el paquete que acabamos de instalar "json-server", 2) usarlo con "create()" y encapsular todo en la variable servidor, 3) luego con router le indicamos donde esta nuestra base de datos "database.json", 4) y luego usamos middlewares, este concepto a nivel general se indica como una funcion que se puede ejecutar ANTES o DESPUES del manejo de una RUTA, tiene incidencia con el acceso a los objetos de Request-Respondes y next(), pudiendo verificar por ejemplo niveles de acceso ANTES de entrar a la RUTA, manejar errores, validar datos, etc ; por ultimo declaramos un puerto, el 3000, para indicar que puerto vamos a aceptar. 
+
+``` js
+const jsonServidor = require('json-server');
+const servidor     = jsonServidor.create();
+const router       = jsonServidor.router('database.json');
+const middlewares  = jsonServidor.defaults();
+const puerto       = process.env.PUERTO || 3000;
+
+servidor.use(middlewares);
+servidor.use(router);
+servidor.listen(puerto);
+
+```
+> por ultimo agregamos al .gitignore el renglon node_modules (es el nombre de la carpeta que se creo al usar npm install ) para indicar que no suba los modulos, ya vimos que ocupan mucho espacio y son lentos a veces.
+
+<p align="center">
+  <a href="">
+    <img src="https://i.imgur.com/W4jCXOB.png">
+  </a>
+</p>
+
+</details>
+
+> commit & push de los cambios y seguimos!
 
 ***
 
