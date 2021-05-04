@@ -276,7 +276,13 @@ To https://git.heroku.com/nombre-de-la-app.git
 
 ```
 
+> con eso ya tenemos todo listo para poder usar las funciones de GET POST PUT PATCH DELETE OPTIONS
+
+HAPPY CODING! 
+
 </details>
+
+
 
 ***
 
