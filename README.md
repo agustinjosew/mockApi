@@ -258,6 +258,24 @@ al momento de usar la combinacion de heroku y mi proyecto tengo que hacer uso
 de la sentencia << PUSH >> concatenando << HEROKU >> y el << BRANCH >> que 
 quiero subir, entonces me queda para utilizar: git push heroku main
 ```
+
+> vemos el log en pantalla de lo que va sucediendo, como va empaquetando, detectandro y creando lo que sea necesario:
+
+``` log
+remote:        Procfile declares types -> (none)
+remote:
+remote: -----> Compressing...
+remote:        Done: 51.4M
+remote: -----> Launching...
+remote:        Released v3
+remote:        https://nombre-de-la-app.herokuapp.com/ deployed to Heroku
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/nombre-de-la-app.git
+ * [new branch]      main -> main
+
+```
+
 </details>
 
 ***
