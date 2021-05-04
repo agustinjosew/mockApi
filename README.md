@@ -226,7 +226,40 @@ servidor.listen(puerto);
 > commit & push de los cambios y seguimos!
 </details>
 
+<details>
+<summary>Paso 7 - Instalamos el cliente de heroku</summary>
 
+```
+Ahora lo que necesitamos es poder comunicarnos con heroku directamente desde nuesta
+terminal, para eso vamos a ver la documentacion de heroku:
+```
+
+> https://devcenter.heroku.com/articles/heroku-cli#download-and-install
+
+> segun tu sistema operativo seleccionas el que corresponde e instalamos
+
+> verificamos desde la consola o git-bash el estado de la instalacion usando heroku --version
+
+> asociamos la instalacion a nuestro package.json mediante npm install -g heroku
+
+</details>
+
+<details>
+<summary>Paso 8 - Creamos una APP en Heroku desde la consola</summary>
+
+> desde la terminal comun o git-bash indicamos con heroku create nombre-de-la-app
+
+> seguramente aparece un mensaje de error, esto se debe a que nunca nos logueamos desde la interface de heroku, presionamos cualquier tecla y seguimos, vemos el mensaje de confirmacion en la consola y wala! ya tenemos creada la app en el "slot" de heroku
+
+> ahora tenemos que pasar desde nuestra carpeta local a heroku todo el contenido, para evitar errores prefiero usar gitbash directamente por lo siguiente:
+
+```
+al momento de usar la combinacion de heroku y mi proyecto tengo que hacer uso de la sentencia << PUSH >> concatenando << HEROKU >> y el << BRANCH >> que quiero subir, entonces me queda:
+```
+```
+git push heroku main
+```
+</details>
 
 ***
 
