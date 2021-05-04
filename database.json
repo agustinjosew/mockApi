@@ -1,0 +1,34 @@
+{
+    "incidencias":[
+        {
+            "id" : 0,
+            "zona": "Centrica",
+            "item": "Mochila",
+            "caractetistica": "Moto blanca y negra, sin patente, dos ocupantes masculinos",
+            "direccion" :[
+                {
+                    "direccionId" : "0",
+                    "numero": "1810",
+                    "nombre": "25 de mayo",
+                    "codigoPostal": "4000",
+                    "provincia": "donde vos quieras"
+                }
+            ]
+        },
+        {
+            "id" : 1,
+            "zona": "Norte",
+            "item": "Celular",
+            "caractetistica": "Moto blanca, dos ocupantes masculinos",
+            "direccion" :[
+                {
+                    "direccionId" : "1",
+                    "numero": "2017",
+                    "nombre": "Av. Domingo Peron",
+                    "codigoPostal": "4000",
+                    "provincia": "donde vos quieras"
+                }
+            ]
+        }
+    ]
+}
