@@ -254,10 +254,9 @@ terminal, para eso vamos a ver la documentacion de heroku:
 > ahora tenemos que pasar desde nuestra carpeta local a heroku todo el contenido, para evitar errores prefiero usar gitbash directamente por lo siguiente:
 
 ```
-al momento de usar la combinacion de heroku y mi proyecto tengo que hacer uso de la sentencia << PUSH >> concatenando << HEROKU >> y el << BRANCH >> que quiero subir, entonces me queda:
-```
-```
-git push heroku main
+al momento de usar la combinacion de heroku y mi proyecto tengo que hacer uso 
+de la sentencia << PUSH >> concatenando << HEROKU >> y el << BRANCH >> que 
+quiero subir, entonces me queda para utilizar: git push heroku main
 ```
 </details>
 
