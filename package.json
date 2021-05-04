@@ -15,7 +15,7 @@
     "url": "git+https://github.com/agustinjosew/mockApi.git"
   },
   "author": "Agustin Jose Wawrzyk",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/agustinjosew/mockApi/issues"
   },
